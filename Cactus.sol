@@ -21,7 +21,7 @@ contract Cactus {
 
         collectedFees += msg.value * ownerFee / 100;
 
-        uint256 payout = msg.value * 120 / 100;
+        uint256 payout = msg.value * 150 / 100;
         players.push(Player(msg.sender, payout));
 
         while (payoutIndex < players.length && this.balance >= collectedFees + players[payoutIndex].payout) {
