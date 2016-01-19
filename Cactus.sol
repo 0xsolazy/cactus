@@ -29,4 +29,9 @@ contract Cactus {
             payoutIndex++;
         }
     }
+
+    function collectFees() {
+        if (msg.sender != creator) throw;
+        if (!creator.send(collectedFees)) throw;
+    }
 }
