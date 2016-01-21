@@ -34,4 +34,12 @@ contract Cactus {
         if (msg.sender != creator) throw;
         if (!creator.send(collectedFees)) throw;
     }
+
+    function totalPlayers() constant returns (uint256) {
+        return players.length;
+    }
+
+    function getPlayer(uint256 i) constant returns (address, uint256) {
+        return (players[i].addr, players[i].payout);
+    }
 }
